@@ -25,7 +25,7 @@ python3 -m venv $HOME/bthidhub/python-venv
 sudo $HOME/bthidhub/python-venv/bin/pip3 install -r $HOME/bthidhub/requirements.txt
 
 cd $HOME/bthidhub/install/on_rpi
-git clone https://github.com/Dreamsorcerer/bluez.git
+git clone https://github.com/aarzaak/bluez.git
 cd $HOME/bthidhub/install/on_rpi/bluez
 autoreconf -fvi
 
