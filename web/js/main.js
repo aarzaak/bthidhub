@@ -377,7 +377,7 @@ class Main{
             url: "http://" + location.hostname + ":8080/shutdown",
             type: 'POST', cache:false, contentType: false, processData: false,
             error: function (jqXHR, textStatus, errorThrown){
-                M.toast({html: "Shutting down Raspberry Pi, reload this page..."});
+                M.toast({html: "Shutting down Raspberry Pi..."});
             }
         });
     }
