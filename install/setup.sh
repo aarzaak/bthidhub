@@ -9,4 +9,5 @@ sudo apt install git -y
 
 git clone https://github.com/aarzaak/bthidhub
 cd $HOME/bthidhub/install/on_rpi
+chmod u+x ./on_pi_setup.sh
 ./on_pi_setup.sh
