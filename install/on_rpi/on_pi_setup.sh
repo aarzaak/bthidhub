@@ -21,7 +21,8 @@ systemctl --user disable obex
 systemctl --user mask obex
 
 sudo apt-get install libcairo2-dev libdbus-1-dev libgirepository1.0-dev libglib2.0-dev libudev-dev libical-dev libreadline-dev autoconf automake libtool python3-pip -y
-sudo pip3 install -r $HOME/bthidhub/requirements.txt
+python3 -m venv $HOME/bthidhub/python-venv
+sudo $HOME/bthidhub/python-venv/bin/pip3 install -r $HOME/bthidhub/requirements.txt
 
 cd $HOME/bthidhub/install/on_rpi
 git clone https://github.com/Dreamsorcerer/bluez.git
@@ -35,7 +36,7 @@ make -j4
 sudo systemctl disable bluetooth
 sudo systemctl stop bluetooth
 sudo make install
-sudo python3 $HOME/bthidhub/install/on_rpi/config_replacer.py
+sudo $HOME/bthidhub/python-venv/bin/python3 $HOME/bthidhub/install/on_rpi/config_replacer.py
 sudo cp $HOME/bthidhub/install/on_rpi/sdp_record.xml /etc/bluetooth/sdp_record.xml
 sudo cp $HOME/bthidhub/install/on_rpi/input.conf /etc/bluetooth/input.conf
 sudo cp $HOME/bthidhub/install/on_rpi/main.conf /etc/bluetooth/main.conf
