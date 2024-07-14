@@ -4,7 +4,7 @@ After=multi-user.target
  
 [Service]
 Type=simple
-ExecStart=/usr/bin/python3 /home/pi/bthidhub/remapper.py
+ExecStart=/home/pi/bthidhub/python-venv/bin/python3 /home/pi/bthidhub/remapper.py
 ExecStartPost=/usr/bin/bash -c 'echo none > /sys/class/leds/ACT/trigger'
 ExecStopPost=/usr/bin/bash -c 'echo heartbeat > /sys/class/leds/ACT/trigger'
 WorkingDirectory=/home/pi/bthidhub
