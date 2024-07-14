@@ -67,6 +67,7 @@ class Main{
         $('#stopDiscoverableButton').on('click', e => {that.changeDiscoverableMode(false);});
         $('#restartServiceButton').on('click', e => {that.restartService();});
         $('#rebootButton').on('click', e => {that.rebootRaspberry();});
+        $('#shutdownButton').on('click', e => {that.shutdownRaspberry();});
 
         this.scanning = false;
         this.setScanningState();
@@ -356,7 +357,7 @@ class Main{
             url: "http://" + location.hostname + ":8080/restartservice",
             type: 'POST', cache:false, contentType: false, processData: false,
             error: function (jqXHR, textStatus, errorThrown){
-                M.toast({html: "Restarting service, reload this page..."});
+                M.toast({html: "Restarting bthidhub service, reload this page..."});
             }
         });
     }
@@ -366,7 +367,17 @@ class Main{
             url: "http://" + location.hostname + ":8080/reboot",
             type: 'POST', cache:false, contentType: false, processData: false,
             error: function (jqXHR, textStatus, errorThrown){
-                M.toast({html: "Rebooting Raspberry, reload this page..."});
+                M.toast({html: "Rebooting Raspberry Pi, reload this page..."});
+            }
+        });
+    }
+
+    shutdownRaspberry(){
+        $.ajax({
+            url: "http://" + location.hostname + ":8080/shutdown",
+            type: 'POST', cache:false, contentType: false, processData: false,
+            error: function (jqXHR, textStatus, errorThrown){
+                M.toast({html: "Shutting down Raspberry Pi, reload this page..."});
             }
         });
     }
