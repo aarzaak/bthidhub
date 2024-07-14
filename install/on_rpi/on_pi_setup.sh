@@ -1,3 +1,5 @@
+#!/bin/bash
+
 cd $HOME/bthidhub/install/on_rpi
 
 sudo echo 0 | sudo tee /sys/class/leds/ACT/brightness > /dev/null
