@@ -50,6 +50,7 @@ class Web:
         self.app.router.add_route('POST', '/changepassword', self.change_password_handler)
         self.app.router.add_route('POST', '/restartservice', self.restart_service_handler)
         self.app.router.add_route('POST', '/reboot', self.reboot_handler)
+        self.app.router.add_route('POST', '/shutdown', self.shutdown_handler)
         self.app.router.add_route('POST', '/login', self.handler_login)
         self.app.router.add_route('GET', '/authorised', self.handler_is_authorised)
         self.app.router.add_route('POST', '/setdevicecapture', self.set_device_capture)
@@ -123,6 +124,10 @@ class Web:
     async def reboot_handler(self, request):
         await check_authorized(request)
         subprocess.Popen(['reboot'])
+
+    async def shutdown_handler(self, request):
+        await check_authorized(request)
+        subprocess.Popen(['sudo', 'shutdown', '-r', 'now'])
 
     async def get_hid_devices_handler(self, request):
         await check_authorized(request)
