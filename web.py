@@ -127,7 +127,7 @@ class Web:
 
     async def shutdown_handler(self, request):
         await check_authorized(request)
-        subprocess.Popen(['sudo', 'shutdown', '-r', 'now'])
+        subprocess.Popen(['sudo', 'shutdown', 'now'])
 
     async def get_hid_devices_handler(self, request):
         await check_authorized(request)
