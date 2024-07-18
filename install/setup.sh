@@ -9,8 +9,6 @@ sudo apt upgrade -y
 
 sudo apt install git -y
 
-git clone https://github.com/aarzaak/bthidhub
-
 sudo apt-key export 90FDDD2E | sudo gpg --dearmour -o /etc/apt/trusted.gpg.d/raspberrypi-debian-armhf.gpg
 sudo mv /etc/apt/sources.list /etc/apt/sources.list/bak
 sudo mv /etc/apt/sources.list.d/raspi.list /etc/apt/sources.list.d/raspi.list.bak
