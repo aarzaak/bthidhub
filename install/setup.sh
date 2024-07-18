@@ -1,7 +1,5 @@
 #!/bin/bash
 
-sudo apt remove linux-*v8 linux-*v7l linux-*v7 -y
-
 sudo apt update
 sudo apt upgrade -y
 
