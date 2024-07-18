@@ -19,5 +19,4 @@ sudo cp bthidhub/install/raspi.list /etc/apt/sources.list.d/raspi.list
 
 cd $HOME/bthidhub/install/on_rpi
 
-chmod u+x ./on_pi_setup.sh
 ./on_pi_setup.sh
