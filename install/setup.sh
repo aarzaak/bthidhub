@@ -1,7 +1,5 @@
 #!/bin/bash
 
-cd $HOME
-
 sudo apt remove linux-*v8 linux-*v7l linux-*v7 -y
 
 sudo apt update
@@ -13,6 +11,5 @@ sudo mv /etc/apt/sources.list.d/raspi.list /etc/apt/sources.list.d/raspi.list.ba
 sudo cp bthidhub/install/sources.list /etc/apt/sources.list
 sudo cp bthidhub/install/raspi.list /etc/apt/sources.list.d/raspi.list
 
-cd $HOME/bthidhub/install/on_rpi
-
+cd on_rpi
 ./on_pi_setup.sh
