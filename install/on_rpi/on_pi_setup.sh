@@ -64,6 +64,8 @@ sudo sed -Ei 's/^127\.0\.1\.1.*$/127.0.1.1\tbthidhub/' /etc/hosts
 # Compile some Python modules to reduce lag.
 # We do this at the end, as the project is already usable without this step.
 cd $ROOTDIR
+ROOTDIR="."
+PYTHONVENV="${ROOTDIR}/python-venv"
 $PYTHONVENV/bin/mypyc
 
 sudo reboot
